@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  width: 800px;
+  margin: 16px auto;
+}
+
+button {
+  width: 160px;
+  margin-left: auto;
+}
+
+mat-divider {
+  margin: 24px 0px;
+}
+
+.empty {
+  text-align: center;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+}

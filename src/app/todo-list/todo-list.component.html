@@ -1,0 +1,26 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Todo List</mat-card-title>
+    <button type="button" mat-flat-button color="primary" (click)="addItem()">
+      Add Item
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div *ngIf="!todoList.length; else list;" class="empty">
+      <p>No tasks</p>
+    </div>
+    <ng-template #list>
+      <mat-list class="todo-list">
+        <mat-list-item *ngFor="let task of todoList">
+          <div class="list-item">
+            <span>{{ task.name | titlecase }}</span>
+            <button color="warn" mat-flat-button (click)="task.taskId && deleteItem(task.taskId)">
+              Delete
+            </button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
